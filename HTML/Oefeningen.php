@@ -4,7 +4,7 @@
 		<title>Rekenen</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../CSS/CSS.css">
-		<link rel="icon" href="image/plus.png">
+		<link rel="icon" href="../image/plus.png">
 	</head>
 	<body>
 		<p>
