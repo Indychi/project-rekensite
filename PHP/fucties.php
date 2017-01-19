@@ -1,5 +1,5 @@
 <?php
-function tweeGetallen($niveau){
+function TweeGetallen($niveau){
 	if($niveau == 4)
 	{
 		$max = 10;
@@ -18,17 +18,11 @@ function tweeGetallen($niveau){
 	$getal1 = mt_rand($min, $max);
 	$getal2 = mt_rand($min, $max);
 	$getallenPaar = array($getal1, $getal2);
-	return tweeGetallen;
+	return $getallenPaar;
 }
 //einde functie tweegetallen
-//begin functie voor wilekeurige operators
-function RandomOperator{
-	$operator = array(+,-,/,*);	
-	return $operator[mt_rand(0,3)];
-}
-//einde functie voor wilekeurige operators
 //begin functie voor feedback generator
-function Feedback{
+function Feedback(){
 	$fout_counter=0;
 }
 ?>

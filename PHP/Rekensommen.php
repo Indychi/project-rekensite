@@ -1,7 +1,7 @@
 <?php
 	setcookie('test', 'bullshit');
 	echo $_COOKIE['test'];
-	include('functies.php');
+	include('fucties.php');
 	$number1 = Tweegetallen($_GET['niveau'])[0];
 	$number2 = Tweegetallen($_GET['niveau'])[1];
 	$all_operators = array('+', '-', '*', '/');
