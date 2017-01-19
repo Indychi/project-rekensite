@@ -9,7 +9,7 @@
 	<body>
 		<p>
 		<?php
-			include('../PHP/Functions/Rekensommen.php');
+			include('../PHP/Rekensommen.php');
 			echo $info[0] . $info[2] . $info[1];
 		?>
 		</p>	

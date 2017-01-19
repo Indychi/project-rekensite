@@ -1,8 +1,9 @@
 <?php
-	include_once('getallenpaar.php');
+	setcookie('test', 'bullshit');
+	echo $_COOKIE['test'];
+	include('functies.php');
 	$number1 = Tweegetallen($_GET['niveau'])[0];
 	$number2 = Tweegetallen($_GET['niveau'])[1];
-	#echo $number1 . $number2 . '<br/>';
 	$all_operators = array('+', '-', '*', '/');
 	$deelbaar = $number1 % $number2;
 	if($_GET['operator'] == 'plus')
@@ -12,15 +13,11 @@
 	if($_GET['operator'] == 'min')
 	{
 		$d = 1;
-		#$t = 1;
 		while($number1 < $number2)
 		{
 			$number1 = Tweegetallen($_GET['niveau'])[0];
 			$number2 = Tweegetallen($_GET['niveau'])[1];
-			#echo $t;
-			#$t++;
 		}
-		#echo $number1  . '-' .$number2 . '<br/>';
 	}
 	if($_GET['operator'] == 'keer')
 	{
