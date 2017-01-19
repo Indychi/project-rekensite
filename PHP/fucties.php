@@ -13,9 +13,7 @@ function tweeGetallen($niveau){
 	elseif($niveau == 6)
 	{
 		$max = 100;
-	}
-	else{}
-	
+	}	
 	$min = 1;
 	$getal1 = mt_rand($min, $max);
 	$getal2 = mt_rand($min, $max);
