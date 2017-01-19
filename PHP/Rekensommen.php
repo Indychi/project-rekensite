@@ -1,6 +1,4 @@
 <?php
-	setcookie('test', 'bullshit');
-	echo $_COOKIE['test'];
 	include('fucties.php');
 	$number1 = Tweegetallen($_GET['niveau'])[0];
 	$number2 = Tweegetallen($_GET['niveau'])[1];
@@ -40,7 +38,21 @@
 			$deelbaar = $number1 % $number2;
 		}
 	}
-	$anwser = $number1.$all_operators[$d].$number2;
+	switch($all_operators[$d])
+	{
+		case "+":
+			$anwser = $number1 + $number2;
+			break;
+		case "-":
+			$anwser = $number1 - $number2;
+			break;
+		case "*":
+			$anwser = $number1 * $number2;
+			break;
+		case "/":
+			$anwser = $number1 / $number2;
+			break;
+	}
 	$info = array($number1, $number2, $all_operators[$d], $anwser);
 ?>
 	
