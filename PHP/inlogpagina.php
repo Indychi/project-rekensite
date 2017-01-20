@@ -3,9 +3,6 @@
 	<head>
 		<title>Rekensite</title>
 		<meta charset="UTF-8">
-		<?php
-		session_start();
-		?>
 	</head>
 	<body>
 		<form action="HTML.php" method="POST">
