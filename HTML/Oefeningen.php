@@ -19,7 +19,7 @@
 						require('../PHP/Rekensommen.php');
 						echo $info[0] . $info[2] . $info[1];
 						
-						if( isset( $_SESSION['counter'] ) ) 
+						if( isset( $_SESSION['counter'])) 
 						{
 							$_SESSION['counter'] += 1;
 						}
