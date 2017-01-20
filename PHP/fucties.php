@@ -1,5 +1,5 @@
 <?php
-function TweeGetallen($niveau){
+function TweeGetallen($_GET['niveau']){
 	if($niveau == 4)
 	{
 		$max = 10;
@@ -27,6 +27,7 @@ function TweeGetallen($niveau){
 function Feedback(){
 	$inputAnswer=$_GET['answer'];
 	$name=$_GET['naam'];
+	$_COOKIE['feedback']++;
 	if($inputAnswer == $info[3])
 	{
 		echo "Goedzo" . $name . "!";
@@ -59,4 +60,4 @@ function som($d, $number1, $number2){
 }
 //einde functie som
 ?>
-setcookie('test', 'bullshit');
+
