@@ -107,4 +107,8 @@ function som($d, $number1, $number2){
 	return $anwser;
 }
 //einde functie som
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> origin/master

@@ -16,7 +16,7 @@
 			<div id="sommen">
 				<p>
 <?php
-	include('../PHP/Rekensommen.php');
+	require('../PHP/Rekensommen.php');
 	echo $info[0] . $info[2] . $info[1];
 ?>
 				</p>
@@ -81,11 +81,14 @@
 			  }
 			}
 		</script>
+<<<<<<< HEAD
 		<p>
 <?php
 	require('../PHP/Rekensommen.php');
 	echo $info[0] . $info[2] . $info[1];
 ?>
 		</p>	
+=======
+>>>>>>> origin/master
 	</body>
 </html>
