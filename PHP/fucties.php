@@ -14,7 +14,6 @@ function TweeGetallen($_GET['niveau']){
 	{
 		$max = 100;
 	}
-	else{}
 	
 	$min = 1;
 	$getal1 = mt_rand($min, $max);
@@ -59,5 +58,9 @@ function som($d, $number1, $number2){
 	return $anwser;
 }
 //einde functie som
+<<<<<<< HEAD
+?>
+=======
 ?>
 
+>>>>>>> refs/remotes/origin/master
