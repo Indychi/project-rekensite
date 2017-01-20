@@ -30,8 +30,15 @@
 						$_SESSION['hoeveel']++;
 					}
 				?>
-				<div id="Bar">
-
+			</div>
+			<div id="Bar">
+		<div id="progress">
+			<div id="Bar">
+				<div id="label">
+					<?php
+						$hoeveel_antwoorden = count($_SESSION['antwoord']);
+						echo $hoeveel_antwoorden;
+					?>
 				</div>
 			</div>		
 		</div>
@@ -56,5 +63,29 @@
 			  }
 			}
 		</script>
+			<button type="submit" form="antwoord" value="Next" onclick="move()"></button>
+		</div>
+		<script>
+			function move() {
+			  var elem = document.getElementById("Bar");   
+			  var width = 10;
+			  var id = setInterval(frame, 10);
+			  function frame() {
+				if (width >= 100) {
+				  clearInterval(id);
+				} else {
+				  width++; 
+				  elem.style.width = width + '%'; 
+				  document.getElementById("label").innerHTML = width * 1  + '%';
+				}
+			  }
+			}
+		</script>
+		<p>
+<?php
+	require('../PHP/Rekensommen.php');
+	echo $info[0] . $info[2] . $info[1];
+?>
+		</p>	
 	</body>
 </html>
