@@ -80,12 +80,6 @@
 				}
 			  }
 			}
-		</script>
-		<p>
-<?php
-	require('../PHP/Rekensommen.php');
-	echo $info[0] . $info[2] . $info[1];
-?>
-		</p>	
+		</script>	
 	</body>
 </html>
