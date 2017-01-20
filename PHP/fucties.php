@@ -58,9 +58,4 @@ function som($d, $number1, $number2){
 	return $anwser;
 }
 //einde functie som
-<<<<<<< HEAD
 ?>
-=======
-?>
-
->>>>>>> refs/remotes/origin/master
