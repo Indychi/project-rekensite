@@ -37,5 +37,26 @@ function Feedback(){
 	}
 	return Feedback;
 }
+//einde functie voor feedback generator
+//begin functie som
+function som($d, $number1, $number2){
+	switch($d)
+	{
+		case "0":
+			$anwser = $number1 + $number2;
+			break;
+		case "1":
+			$anwser = $number1 - $number2;
+			break;
+		case "2":
+			$anwser = $number1 * $number2;
+			break;
+		case "3":
+			$anwser = $number1 / $number2;
+			break;
+	}
+	return $anwser;
+}
+//einde functie som
 ?>
 setcookie('test', 'bullshit');
