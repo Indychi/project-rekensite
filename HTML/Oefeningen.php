@@ -5,8 +5,12 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../CSS/CSS.css">
 		<link rel="icon" href="../image/plus.png">
+		<?php
+			setcookie('feedback', '0');
+		?>
 	</head>
 	<body>
+<<<<<<< HEAD
 		<div id="som_area">
 			<div id="sommen">
 				<p>
@@ -49,5 +53,14 @@
 			  }
 			}
 		</script>
+=======
+		<p>
+<?php
+	include('../PHP/fucties.php');
+	include('../PHP/Rekensommen.php');
+	echo $info[0] . $info[2] . $info[1];
+?>
+		</p>	
+>>>>>>> refs/remotes/origin/master
 	</body>
 </html>
