@@ -12,8 +12,7 @@
 	<body>
 		<p>
 <?php
-	include('../PHP/fucties.php');
-	include('../PHP/Rekensommen.php');
+	require('../PHP/Rekensommen.php');
 	echo $info[0] . $info[2] . $info[1];
 ?>
 		</p>	
