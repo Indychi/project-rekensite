@@ -6,16 +6,55 @@
 		<link rel="stylesheet" type="text/css" href="../CSS/CSS.css">
 		<link rel="icon" href="../image/plus.png">
 		<?php
+			session_start();
+			$_SESSION['hoeveel'] = 1;
 			setcookie('feedback', '0');
 		?>
 	</head>
 	<body>
-		<p>
+		<div id="som_area">
+			<div id="sommen">
+				<p>
 <?php
-	include('../PHP/fucties.php');
 	include('../PHP/Rekensommen.php');
 	echo $info[0] . $info[2] . $info[1];
 ?>
-		</p>	
+				</p>
+			</div>
+		</div>
+		<div id="Progress">
+			<div id="label">
+				<?php
+					echo $_SESSION['hoeveel'] . " van de 20";
+					if(Isset($_POST['antwoord'])){
+						$_SESSION['hoeveel']++;
+					}
+				?>
+				<div id="Bar">
+
+				</div>
+			</div>		
+		</div>
+		<div id="Input_vak"
+			<form action="" method="POST" id="antwoord">
+				<input type="text" name="User_antwoord" placeholder="antwoord"></input>
+			</form>
+			<button type="submit" form="antwoord" value="Next" onclick="move()">Next</button>
+		</div>
+		<script>
+			function move() {
+			  var elem = document.getElementById("Bar");  
+			  var count = 0;
+			  var width = 5;
+			  var id = setInterval(frame, 5);
+			  function frame() {
+				  while(count =! 5){
+					width++;
+				  } 
+				  elem.style.width = width + '%'; 
+				  document.getElementById("label").innerHTML = <?php echo $_SESSION['hoeveel'] . " van de 20"?>;
+			  }
+			}
+		</script>
 	</body>
 </html>
