@@ -1,5 +1,5 @@
 <?php
-function TweeGetallen($_GET['niveau']){
+function TweeGetallen($niveau){
 	if($niveau == 4)
 	{
 		$max = 10;
@@ -19,7 +19,7 @@ function TweeGetallen($_GET['niveau']){
 	$getal1 = mt_rand($min, $max);
 	$getal2 = mt_rand($min, $max);
 	$getallenPaar = array($getal1, $getal2);
-	return TweeGetallen;
+	return $getallenPaar;
 }
 //einde functie tweegetallen
 //begin functie voor feedback generator
