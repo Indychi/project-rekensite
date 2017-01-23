@@ -33,12 +33,14 @@
 						if(isset($_POST['User_antwoord'])) {
 							$_SESSION['antwoord'][] = $_POST['User_antwoord'];
 							$vragen = count($_SESSION['antwoord']);
+							$progress = ($vragen + 1)*4.6;
+							echo $vragen;
+							if($vragen == 20) {
+								header("location: Resultaten.php");
+							}
 						}
 						else {
 							$_SESSION['important'] = $_GET;
-						}
-						if($vragen == 20) {
-							header("location: Resultaten.php");
 						}
 						require('../PHP/Rekensommen.php');
 						echo $info[0] . $info[2] . $info[1];
@@ -65,7 +67,7 @@
 			<script>
 				$( function() {
 					$( "#Progress" ).progressbar({
-						value: <?php $progress = $_SESSION['counter'] + 1; echo $progress; ?>
+						value: <?php echo $progress; ?>
 					});
 				} );
 			</script>
