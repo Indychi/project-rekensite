@@ -9,7 +9,7 @@
 	<body>
 		<form action="HTML.php" method="POST">
 			<input type="text" placeholder="naam" name="naam" required></input>
-			<input type="submit" name="verzend"></input>
+			<input type="submit" name="verzend" value="volgende"></input>
 		</form>
 	</body>
 </html>
