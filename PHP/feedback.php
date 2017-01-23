@@ -1,9 +1,9 @@
 <?php
 	function Feedback(){
-		$inputAnswer=$_GET['answer'];
-		$name=$_GET['naam'];
+		$antwoord=$_POST['answer'];
+		$name=$_POST['naam'];
 		
-		if($inputAnswer == $info[3])
+		if($antwoord == $info[3])
 		{
 			echo "Goedzo" . $name . "!";
 		}

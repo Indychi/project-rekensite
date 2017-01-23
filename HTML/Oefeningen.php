@@ -19,6 +19,7 @@
 			}
 			$_SESSION['hoeveel'] = 1;
 			setcookie('feedback', '0');
+			require('../PHP/feedback.php');
 		?>
 	</head>
 	<body>
