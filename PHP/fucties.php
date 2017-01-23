@@ -24,7 +24,7 @@
 	}
 	//einde functie tweegetallen
 	//begin functie voor feedback generator
-	function Feedback(){
+	/*function Feedback(){
 		$inputAnswer=$_GET['answer'];
 		$name=$_GET['naam'];
 		
@@ -38,7 +38,7 @@
 			$_COOKIE['feedback']++;
 		}
 		return Feedback;
-	}
+	}*/
 	//einde functie voor feedback generator
 	//begin functie som
 	function som($d, $number1, $number2){
