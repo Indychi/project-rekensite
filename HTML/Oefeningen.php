@@ -22,7 +22,7 @@
 			}
 			$_SESSION['hoeveel'] = 1;
 			setcookie('feedback', '0');
-			$_SESSION['antwoord'] =  array();
+			
 		?>
 	</head>
 	<body>
@@ -30,11 +30,15 @@
 			<div id="sommen">
 				<p>
 					<?php
-						if(isset($_SESSION['antwoord'])) {
-							
+						if(isset($_POST['User_antwoord'])) {
+							$_SESSION['antwoord'][] = $_POST['User_antwoord'];
+							$vragen = count($_SESSION['antwoord']);
 						}
 						else {
 							$_SESSION['important'] = $_GET;
+						}
+						if($vragen == 20) {
+							header("location: Resultaten.php");
 						}
 						require('../PHP/Rekensommen.php');
 						echo $info[0] . $info[2] . $info[1];
@@ -61,13 +65,13 @@
 			<script>
 				$( function() {
 					$( "#Progress" ).progressbar({
-					value: <?php $progress = $_SESSION['counter'] + 1; echo $progress;?>
+						value: <?php $progress = $_SESSION['counter'] + 1; echo $progress; ?>
 					});
 				} );
 			</script>
 			<div id="Progress"></div>
 			<div id="Input_vak">
-				<form action="" method="POST" id="antwoord" onsubmit="return true">
+				<form action="?" method="POST" id="antwoord" >
 					<input type="text" name="User_antwoord" placeholder="antwoord" onkeypress="move"></input>
 				</form>
 				<button type="submit" form="antwoord" value="Next" onkeypress="move()">Next</button>
