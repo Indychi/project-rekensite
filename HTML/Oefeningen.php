@@ -65,7 +65,7 @@
 			<div id="Progress"></div>
 			<div id="Input_vak">
 				<form action="?" method="POST" id="antwoord" >
-					<input type="text" name="User_antwoord" placeholder="antwoord" onkeypress="move"></input>
+					<input type="number" name="User_antwoord" placeholder="antwoord" onkeypress="move" required></input>
 				</form>
 				<button type="submit" form="antwoord" value="Next" onkeypress="move()">Next</button>
 			</div>
