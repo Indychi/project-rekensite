@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		<form action="HTML.php" method="POST">
+		<form action="HTML.php" method="GET">
 			<input type="text" placeholder="naam" name="naam"></input>
 			<input type="submit" name="verzend"></input>
 		</form>
