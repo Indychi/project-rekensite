@@ -22,7 +22,7 @@
 			}
 			$_SESSION['hoeveel'] = 1;
 			setcookie('feedback', '0');
-			require('../PHP/feedback.php');
+			
 		?>
 	</head>
 	<body>
@@ -32,31 +32,24 @@
 					<?php
 						if(isset($_POST['User_antwoord'])) {
 							$_SESSION['antwoord'][] = $_POST['User_antwoord'];
-							$vragen = count($_SESSION['antwoord']);
+							$vragen = count($_SESSION['antwoord']);	
+							require('../PHP/feedback.php');
+							
+							if ($vragen == 20) 
+							{
+								header("location: Resultaten.php");
+							}
 						}
 						else {
 							$_SESSION['important'] = $_GET;
 						}
-						if($vragen == 20) {
-							header("location: Resultaten.php");
-						}
+
 						require('../PHP/Rekensommen.php');
 						echo $info[0] . $info[2] . $info[1];
 						$_SESSION['counter']=0;
 						
-						if( isset( $_SESSION['counter'])) 
+						if($_SESSION['counter']  > 20) 
 						{
-							$_SESSION['counter']++;
-							if($_SESSION['counter'] == 20)
-							{
-								echo 'Je bent klaar met de opdrachten' . '<a href="HTML.php">'.'klik hier ' . '</a>' . 'om terug te gaan.';
-							}
-						}
-						else 
-						{
-							$_SESSION['counter'] = 1;
-						}
-						if($_SESSION['counter']  > 20) {
 							unset($_SESSION['counter']);
 						}
 					?>
@@ -77,6 +70,6 @@
 				<button type="submit" form="antwoord" value="Next" onkeypress="move()">Next</button>
 			</div>
 		</div>
-		<div id="feedback_area"><?php print_r($_SESSION) ?></div>
+		<div id="feedback_area"><?php// print_r($_SESSION) ?></div>
 	</body>
 </html>
