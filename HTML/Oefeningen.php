@@ -35,10 +35,15 @@
 						}
 						require('../PHP/Rekensommen.php');
 						echo $info[0] . $info[2] . $info[1];
+						$_SESSION['counter']=0;
 						
 						if( isset( $_SESSION['counter'])) 
 						{
-							$_SESSION['counter'] += 1;
+							$_SESSION['counter']++;
+							if($_SESSION['counter'] == 20)
+							{
+								echo 'Je bent klaar met de opdrachten' . '<a href="HTML.php">'.'klik hier ' . '</a>' . 'om terug te gaan.';
+							}
 						}
 						else 
 						{
