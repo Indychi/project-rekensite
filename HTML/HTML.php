@@ -14,6 +14,10 @@
 	<body>
 		<div id="container">
 			<div id="Home_Main">
+			<?php
+				$name= $_POST['naam'];
+				echo "Goedendag " . $name;
+			?>
 			</div>
 			<div id="Side_bar">
 				<div id="groep4">
