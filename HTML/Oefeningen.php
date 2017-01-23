@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../CSS/CSS.css">
 		<link rel="icon" href="../image/plus.png">
+		<script src="../../../Jquery.js"></script>
 		<?php
 			session_start();
 			if(isset($_GET['operator'])) {
@@ -18,7 +19,6 @@
 			}
 			$_SESSION['hoeveel'] = 1;
 			setcookie('feedback', '0');
-			echo $_SESSION['type'];
 		?>
 	</head>
 	<body>
@@ -88,8 +88,9 @@
 							clearInterval(id);
 						} 
 						else {
-							while (width != (<?php $test = count($_SESSION['antwoord'])+1; echo $test ?> * 5))
-							width++;
+							while (width != (<?php $test = count($_SESSION['antwoord'])+1; echo $test ?> * 5)){
+								width++;
+							}
 							elem.style.width = width + '%';
 							document.getElementById("label").innerHTML = <?php $_SESSION['hoeveel'][0] = "'1"; echo $_SESSION['hoeveel'][$number] . " van de 20'" ?>;
 						}
