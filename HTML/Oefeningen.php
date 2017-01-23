@@ -7,8 +7,18 @@
 		<link rel="icon" href="../image/plus.png">
 		<?php
 			session_start();
+			if(isset($_GET['operator'])) {
+				$_SESSION['operator'] = $_GET['operator'];
+			}
+			if(isset($_GET['niveau'])) {
+				$_SESSION['niveau'] = $_GET['niveau'];
+			}
+			if(isset($_GET['type'])) {
+				$_SESSION['type'] = $_GET['type'];
+			}
 			$_SESSION['hoeveel'] = array("1");
 			setcookie('feedback', '0');
+			echo $_SESSION['type'];
 		?>
 	</head>
 	<body>
@@ -16,6 +26,13 @@
 			<div id="sommen">
 				<p>
 					<?php
+						if(isset($_SESSION['antwoord'])) {
+							
+						}
+						else {
+							$_SESSION['antwoord'] =  array();
+							$_SESSION['antwoord'][] = $_GET;
+						}
 						require('../PHP/Rekensommen.php');
 						echo $info[0] . $info[2] . $info[1];
 						
@@ -40,15 +57,15 @@
 				<div id="Bar"></div>
 			</div>
 			<div id="Input_vak">
-				<form action="" method="POST" id="antwoord">
-					<input type="text" name="User_antwoord" placeholder="antwoord"></input>
+				<form action="?<?php echo 'operator=' . $_SESSION['operator'] . '&type=' . $_SESSION['type'] . '&niveau=' . $_SESSION['niveau'] ?>" method="GET" id="antwoord" onsubmit="return true">
+					<input type="text" name="User_antwoord" placeholder="antwoord" onkeypress="move"></input>
 				</form>
 				<button type="submit" form="antwoord" value="Next" onkeypress="move()">Next</button>
 			</div>
 			<script>
-				document.getElementById('foo').onkeypress = function(move){
-					if (!move) move = window.event;
-					var keyCode = move.keyCode || move.which;
+				document.getElementById('Input_vak').onkeypress = function(e){
+					if (!e) e = window.event;
+					var keyCode = e.keyCode || e.which;
 					if (keyCode == '13'){
 					  // Enter pressed
 					  document.write(test);
@@ -63,6 +80,7 @@
 							clearInterval(id);
 						} 
 						else {
+							while (width != (<?php $test = count($_SESSION['antwoord'])+1; echo $test ?> * 5))
 							width++;
 							elem.style.width = width + '%';
 							document.getElementById("label").innerHTML = <?php $_SESSION['hoeveel'][0] = "'1"; echo $_SESSION['hoeveel'][$number] . " van de 20'" ?>;
@@ -71,6 +89,6 @@
 				}
 			</script>
 		</div>
-		<div id="feedback_area"></div>
+		<div id="feedback_area"><?php $test = count($_SESSION['antwoord'])+1; echo $test ?></div>
 	</body>
 </html>
