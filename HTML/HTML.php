@@ -9,7 +9,6 @@
 	<body>
 		<div id="container">
 			<div id="Home_Main">
-				
 			</div>
 			<div id="Side_bar">
 				<div id="groep4">
@@ -51,8 +50,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div id="feedback">
 			</div>
 		</div>
 	</body>

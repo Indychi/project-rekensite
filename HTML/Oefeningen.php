@@ -7,7 +7,7 @@
 		<link rel="icon" href="../image/plus.png">
 		<?php
 			session_start();
-			$_SESSION['hoeveel'] = array(1);
+			$_SESSION['hoeveel'] = array("1");
 			setcookie('feedback', '0');
 		?>
 	</head>
@@ -33,7 +33,7 @@
 			<div id="Progress">
 				<div id="label">
 					<?php
-						$number = count($_SESSION['hoeveel']);
+						$number = count($_SESSION['hoeveel']) - 1;
 						echo $_SESSION['hoeveel'][$number] . " van de 20";
 					?>
 				</div>
@@ -43,25 +43,34 @@
 				<form action="" method="POST" id="antwoord">
 					<input type="text" name="User_antwoord" placeholder="antwoord"></input>
 				</form>
-				<button type="submit" form="antwoord" value="Next" onclick="move()">Next</button>
+				<button type="submit" form="antwoord" value="Next" onkeypress="move()">Next</button>
 			</div>
 			<script>
-				function move() {
-				  var elem = document.getElementById("Bar");   
-				  var width = 5;
-				  var id = setInterval(frame, 10);
-				  function frame() {
-					  width + 5; 
-					  elem.style.width = width + '%'; 
-					  document.getElementById("label").innerHTML = width * 1  + '%';
+				document.getElementById('foo').onkeypress = function(move){
+					if (!move) move = window.event;
+					var keyCode = move.keyCode || move.which;
+					if (keyCode == '13'){
+					  // Enter pressed
+					  document.write(test);
 					}
-				  }
 				}
-			  }
-			}
-		</script>	
-
+				function move() {
+					var elem = document.getElementById("Bar");
+					var width = (<?php echo $number ?> + 1) * 5;
+					var id = setInterval(frame, 10);
+					function frame() {
+						if (width >= 100) {
+							clearInterval(id);
+						} 
+						else {
+							width++;
+							elem.style.width = width + '%';
+							document.getElementById("label").innerHTML = <?php $_SESSION['hoeveel'][0] = "'1"; echo $_SESSION['hoeveel'][$number] . " van de 20'" ?>;
+						}
+					}
+				}
 			</script>
 		</div>
+		<div id="feedback_area"></div>
 	</body>
 </html>
