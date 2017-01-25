@@ -37,29 +37,18 @@
 	z-index: 5;
 }
 
-#label {
+#progress_container {
+	margin: 0px 510px 0px 510px;
 	position: relative;
-	text-align: center;
-	line-height: 30px;
-	color: black;
-	z-index: 3;
-}
-
-#Progress {
-	margin: 0px 30% 0px 30%;
-	position: relative;
-	width: 40%;
+	width: 900px;
 	height: 30px;
-	background-color: lightgrey;
-	z-index: 1;
+	background-color: green;
 }
 
-#Bar {
+#test {
+	width: 45px;
+	height: 30px;
 	position: absolute;
-	margin: -30px 100px 100px 0px;
-	width: 5%;
-	height: 100%;
-	float: left;
-	background-color: darkgrey;
-	z-index: 2;
+	background: black;
+	z-index: 1;
 }
