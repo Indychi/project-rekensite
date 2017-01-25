@@ -66,17 +66,16 @@
 						?>
 					</p>
 				</div>
-				<div id="progress_container">
-					<div id="test" ></div>
-				</div>
-				<div id="Input_vak">
-					<form action="?" method="POST" id="antwoord" >
-						<input type="number" name="User_antwoord" placeholder="antwoord" required ></input>
-					</form>
-					<button type="submit" form="antwoord" value="Next" onkeypress="myMove()">Next</button>
-				</div>
 			</div>
-			<div id="feedback_area"><?php print_r($_SESSION) ?></div>
-		</div>
+			<div id="progress_container">
+				<div id="test" ></div>
+			</div>
+			<div id="Input_vak">
+				<form action="?" method="POST" id="antwoord" >
+					<input type="number" name="User_antwoord" placeholder="antwoord" required ></input>
+				</form>
+				<button type="submit" form="antwoord" value="Next" onkeypress="myMove()">Next</button>
+			</div>
+		<div id="feedback_area"><?php print_r($_SESSION) ?></div>
 	</body>
 </html>
