@@ -28,13 +28,9 @@
 				echo $vragen;
 				if($vragen == 20) {
 					$vragen = count($_SESSION['antwoord']);	
-				}
-				require('../PHP/feedback.php');
-				
-				if ($vragen == 20) 
-				{
 					header("location: Resultaten.php");
 				}
+				require('../PHP/feedback.php');
 			}
 			else {
 				$_SESSION['important'] = $_GET;
