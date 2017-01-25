@@ -24,28 +24,33 @@
 	}
 	//einde functie tweegetallen
 	//begin functie voor feedback generator
-	/*function Feedback(){
-		$antwoord=$_POST['User_antwoord'];
-		$name=$_POST['naam'];
-		$_SESSION['counter']=0;
+	function Feedback(){
+		if (isset ($_POST['Next']))
+		{		
+			$_SESSION['User_antwoord']=$_POST['User_antwoord'];
+			$antwoord=$_SESSION['User_antwoord'];
+			$name=$_SESSION['naam'];
+			//$_SESSION['counter']=0;
+			//counter in oefeningen pleuren
 		
-		if($antwoord == $info[3])
-		{
-			echo "Goedzo" . $name . "!";
-		}
+			if($antwoord == $_SESSION['info'][3])
+			{
+				echo "<br>" . "Goedzo " . $name . "!";
+				$_SESSION['counter']++;
+			}
 		
-		elseif($_SESSION == 15)
-		{
-			echo $name . "ga maar naar de leraar voor meer uitleg over dit onderwerp.";
-		}
+			elseif($_SESSION['fout']== 15)
+			{
+				echo "<br>" .$name . " ga maar naar de leraar voor meer uitleg over dit onderwerp.";
+			}
 		
-		else
-		{
-			echo "Jammer" . $name ."het juiste antwoord is" . $info[3];
-			$_COOKIE['feedback']++;
+			else
+			{
+				echo "<br>" . "Jammer " . $name ." het juiste antwoord is " . $_SESSION['info'][3];
+				$_SESSION['fout']++;
+			}
 		}
-		return Feedback;
-	}*/
+	}	
 	//einde functie voor feedback generator
 	//begin functie som
 	function som($d, $number1, $number2){

@@ -10,7 +10,12 @@
 		<div id="container">
 			<div id="Home_Main">
 			<?php
-				$name= $_POST['naam'];
+				session_start();
+				if (isset ($_POST['verzend']))
+				{
+					$_SESSION['naam']=$_POST['naam'];
+				}
+				$name= $_SESSION['naam'];
 				echo "Goedendag " . $name;
 			?>
 			</div>
@@ -56,5 +61,6 @@
 				</div>
 			</div>
 		</div>
+		<?php print_r($_SESSION); ?>
 	</body>
 </html>

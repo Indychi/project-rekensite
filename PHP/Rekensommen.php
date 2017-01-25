@@ -1,5 +1,5 @@
 <?php
-	include('fucties.php');
+	include('functies.php');
 	$number1 = Tweegetallen($_SESSION['niveau'])[0];
 	$number2 = Tweegetallen($_SESSION['niveau'])[1];
 	$all_operators = array('+', '-', '*', '/');
@@ -33,6 +33,6 @@
 			$number2 = Tweegetallen($_SESSION['niveau'])[1];
 		}
 	}
-	$info = array($number1, $number2, $all_operators[$d], som($d, $number1, $number2));
+	$_SESSION['info'] = array($number1, $number2, $all_operators[$d], som($d, $number1, $number2));
 ?>
 	
