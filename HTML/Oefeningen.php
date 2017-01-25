@@ -35,15 +35,19 @@
 							$vragen = count($_SESSION['antwoord']);
 							$progress = ($vragen + 1)*4.6;
 							echo $vragen;
-							if($vragen == 20) {
-							$vragen = count($_SESSION['antwoord']);	
-							require('../PHP/feedback.php');
 							
-							if ($vragen == 20) 
+							if($vragen == 20) 
 							{
-								header("location: Resultaten.php");
+								$vragen = count($_SESSION['antwoord']);
 							}
-						}
+								include_once('../PHP/feedback.php');
+							
+								if ($vragen == 20) 
+								{
+									header("location: Resultaten.php");
+								}
+							
+							}
 						else {
 							$_SESSION['important'] = $_GET;
 						}
@@ -73,6 +77,6 @@
 				<button type="submit" form="antwoord" value="Next" onkeypress="move()">Next</button>
 			</div>
 		</div>
-		<div id="feedback_area"><?php// print_r($_SESSION) ?></div>
+		<div id="feedback_area"><?php print_r($_SESSION) ?></div>
 	</body>
 </html>

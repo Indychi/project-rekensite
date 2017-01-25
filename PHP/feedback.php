@@ -2,7 +2,8 @@
 	function Feedback(){
 		$antwoord=$_POST['User_antwoord'];
 		$name=$_POST['naam'];
-		$_SESSION['counter']=0;
+		//$_SESSION['counter']=0;
+		//counter in oefeningen pleuren
 		
 		if($antwoord == $info[3])
 		{
@@ -17,7 +18,6 @@
 		else
 		{
 			echo "Jammer" . $name ."het juiste antwoord is" . $info[3];
-			$_COOKIE['feedback']++;
 		}
 		return Feedback;
 	}
