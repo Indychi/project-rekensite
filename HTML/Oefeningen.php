@@ -18,6 +18,10 @@
 				$_SESSION['type'] = $_GET['type'];
 			}
 			$_SESSION['hoeveel'] = 1;
+<<<<<<< HEAD
+			
+=======
+			setcookie('feedback', '0');
 		
 			if(isset($_POST['User_antwoord'])) {
 				$_SESSION['antwoord'][] = $_POST['User_antwoord'];
@@ -42,6 +46,7 @@
 				unset($_SESSION['counter']);
 			}
 			//session_destroy();
+>>>>>>> 5a7a7d532e2c951d997c7ea4bcdbe4a31bccaac1
 		?>
 	<script>
 		$(document).ready(function(){
@@ -52,6 +57,7 @@
 	</script>
 	</head>
 	<body>
+<<<<<<< HEAD
 		<div id="som_area">
 			<div id="sommen">
 				<p>
@@ -93,6 +99,7 @@
 						}
 					?>
 				</p>
+=======
 		<div id="container">
 			<div id="som_area">
 				<div id="sommen">
@@ -105,17 +112,21 @@
 			</div>
 			<div id="progress_container">
 				<div id="test" ></div>
+>>>>>>> 5a7a7d532e2c951d997c7ea4bcdbe4a31bccaac1
 			</div>
 			<div id="Input_vak">
 				<form action="?" method="POST" id="antwoord" >
 					<input type="number" name="User_antwoord" placeholder="antwoord" required ></input>
 				</form>
+<<<<<<< HEAD
 				<button type="submit" form="antwoord" name="Next" value="Next" onkeypress="move()">Next</button>
 			</div>
 		</div>
 		<div id="feedback_area"><?php print_r($_SESSION); echo "<br />"; print_r($_POST);?></div>
+=======
 				<button type="submit" form="antwoord" value="Next" onkeypress="myMove()">Next</button>
 			</div>
 		<div id="feedback_area"><?php print_r($_SESSION) ?></div>
+>>>>>>> 5a7a7d532e2c951d997c7ea4bcdbe4a31bccaac1
 	</body>
 </html>
