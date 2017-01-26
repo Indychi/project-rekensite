@@ -1,3 +1,4 @@
+/*dropdown buttons*/
 .dropbutton
 {
 	background-color: grey;
@@ -16,7 +17,7 @@
 
 .dropdown-content
 {
-	background-color: lightgrey;
+	background-color: #E1E1E1;
     display: none;
     position: absolute;
     min-width: 160px;
@@ -36,19 +37,22 @@
     display: inline-block;
 	z-index: 5;
 }
+/*end dropdown buttons*/
+/*progress bar*/
+#bar {
+	width: 0px;
+	max-width: 900px;
+	height: 30px;
+	position: absolute;
+	background: #4A4849;
+	z-index: 1;
+}
 
 #progress_container {
 	margin: 0px 510px 0px 510px;
 	position: relative;
 	width: 900px;
 	height: 30px;
-	background-color: green;
+	background-color: #A3A2A0;
 }
-
-#bar {
-	width: 0px;
-	height: 30px;
-	position: absolute;
-	background: black;
-	z-index: 1;
-}
+/*end progress bar*/

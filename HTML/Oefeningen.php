@@ -21,20 +21,31 @@
 		
 			if(isset($_POST['User_antwoord'])) {
 				$_SESSION['antwoord'][] = $_POST['User_antwoord'];
+				if(isset($_SESSION['antwoord'])){
+					$_SESSION['eerdere_antwoorden'][] = $_SESSION['antwoord'][]
+				}
 				$vragen = count($_SESSION['antwoord']);
-				$progress = ($vragen + 1)*4.6;
+				$progress_width = 900/20;
+				$progress = ($vragen)* $progress_width;
 				echo $vragen;
 				
-				if($vragen == 20) 
-				{
-					$vragen = count($_SESSION['antwoord']);
-					header("location: Resultaten.php");
+				if($_SESSION['type'] == 'toets'){
+					if($vragen == 20) 
+					{
+						header("refresh:5;url= Resultaten.php");
+					}
+				}
+				else{
+					if($vragen == 20){
+						header("refresh:5;url= HTML.php");
+					}
 				}
 			}
 			else {
 				$_SESSION['important'] = $_GET;
 			}
-			require('../PHP/Rekensommen.php');		
+			require('../PHP/Rekensommen.php');
+			include_once('../PHP/functies.php');
 			Feedback();
 			$_SESSION['counter']=0;
 			$_SESSION['fout']=0;
@@ -49,9 +60,7 @@
 		?>
 	<script>
 		$(document).ready(function(){
-			$(document).ready(function(){
-				$("#bar").animate({width: '<?php echo $progress ?>px'});
-			});
+			$("#bar").animate({width: '<?php echo $progress ?>px'});
 		});
 	</script>
 	</head>
@@ -69,13 +78,13 @@
 			</div>
 			<div id="Input_vak">
 				<form action="?" method="POST" id="antwoord" >
-					<input type="number" name="User_antwoord" placeholder="antwoord" required ></input>
+					<input type="text" name="User_antwoord" pattern="\d*" placeholder="antwoord" required ></input>
 				</form>
 				<button type="submit" form="antwoord" name="Next" value="Next" >Next</button>
 			</div>
 		</div>
 		<div id="feedback_area">
-			<?php print_r($_SESSION); echo "<br />"; print_r($_POST);?>
+			<?php print_r($_SESSION) ?>
 		</div>
 	</body>
 </html>
