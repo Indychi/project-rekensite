@@ -45,7 +45,6 @@
 				unset($_SESSION['counter']);
 				unset($_SESSION['fout']);
 			}
-			//include_once(fucties.php);
 			//session_destroy();
 		?>
 	<script>
