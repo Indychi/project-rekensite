@@ -28,6 +28,8 @@
 				$vragen = count($_SESSION['antwoord']);
 				$progress_width = 900/20;
 				$progress = ($vragen)* $progress_width;
+				$antwoord=$_POST['User_antwoord'];
+				$_SESSION['past'][] = $antwoord;
 				echo $vragen;
 				
 				if($_SESSION['type'] == 'toets'){
@@ -85,7 +87,7 @@
 			</div>
 		</div>
 		<div id="feedback_area">
-			<?php print_r($_SESSION) ?>
+			<?php echo "<pre>"; print_r($_SESSION) ?>
 		</div>
 	</body>
 </html>
