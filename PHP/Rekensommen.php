@@ -3,7 +3,7 @@
 	$number1 = Tweegetallen($_SESSION['niveau'])[0];
 	$number2 = Tweegetallen($_SESSION['niveau'])[1];
 	$all_operators = array('+', '-', '*', '/');
-	$_SESSION['past']=$antwoord;
+	//$_SESSION['past']=$antwoord;
 	$deelbaar = $number1 % $number2;
 	if($_SESSION['operator'] == 'plus'){
 		$d = 0;
