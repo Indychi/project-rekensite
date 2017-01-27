@@ -5,20 +5,19 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../CSS/CSS.css">
 		<link rel="icon" href="../Image/plus.png">
+		<?php
+			session_start();
+			if (isset ($_POST['verzend']))
+			{
+				$_SESSION['naam']=$_POST['naam'];
+			}
+			$name= $_SESSION['naam'];
+			echo "Goedendag " . $name;
+		?>
 	</head>
 	<body>
 		<div id="container">
-			<div id="Home_Main">
-			<?php
-				session_start();
-				if (isset ($_POST['verzend']))
-				{
-					$_SESSION['naam']=$_POST['naam'];
-				}
-				$name= $_SESSION['naam'];
-				echo "Goedendag " . $name;
-			?>
-			</div>
+			<div id="Home_Main"></div>
 			<div id="Side_bar">
 				<div id="groep4">
 					<div class="dropdown">
@@ -61,6 +60,5 @@
 				</div>
 			</div>
 		</div>
-		<?php //print_r($_SESSION); ?>
 	</body>
 </html>

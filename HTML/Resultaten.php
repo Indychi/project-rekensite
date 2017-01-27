@@ -8,10 +8,12 @@
 		<?php session_start(); ?>
 	</head>
 	<body>
-		<?php
-			for($d=0;$d!=20;$d++){
-				echo $
-			}
-		?>
+		<div id="container" >
+			<?php
+				for($d=0;$d!=20;$d++){
+					echo $
+				}
+			?>
+		</div>
 	</body>
 </html>
