@@ -29,7 +29,9 @@
 				$progress_width = 900/20;
 				$progress = ($vragen)* $progress_width;
 				$antwoord=$_POST['User_antwoord'];
-				$_SESSION['past'][] = $antwoord;
+				$_SESSION['past'][-1] = $antwoord;
+				$_SESSION['oud_antwoord']=$_SESSION['info'][3];
+				
 				echo $vragen;
 				
 				if($_SESSION['type'] == 'toets'){
