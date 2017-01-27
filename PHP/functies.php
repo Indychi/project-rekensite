@@ -39,10 +39,10 @@
 				$_SESSION['counter']++;
 			}
 		
-			elseif($_SESSION['fout']== 15)
+			/*elseif($_SESSION['fout']== 15)
 			{
 				echo "<br>" .$name . " ga maar naar de leraar voor meer uitleg over dit onderwerp.";
-			}
+			}*/
 		
 			else
 			{
