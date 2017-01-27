@@ -31,14 +31,12 @@
 			//$antwoord=$_SESSION['eerdere_antwoorden'][$f];
 			$name=$_SESSION['naam'];
 			//$_SESSION['past'] []=$_SESSION['past']++;
-			//$_SESSION['counter']=0;
 			//counter in oefeningen pleuren
 		
 			if($_SESSION['past'] == $_SESSION['oud_antwoord'])
 			{
 				echo "<br>" . "Goedzo " . $name . "!";
 				$_SESSION['counter']++;
-				$_SESSION['past'] [] ++;
 			}
 		
 			/*elseif($_SESSION['fout']== 15)
