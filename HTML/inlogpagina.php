@@ -17,7 +17,7 @@
 		{
 		?>
 		<form action="HTML.php" method="POST">
-			<input type="text" placeholder="naam" name="naam" required></input>
+			Naam:<input type="text" placeholder="Typ hier je naam" name="naam" required></input>
 			<input type="submit" name="verzend" value="volgende"></input>
 		</form>
 		<?php

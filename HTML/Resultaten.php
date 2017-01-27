@@ -9,7 +9,6 @@
 	</head>
 	<body>
 		<?php
-			session_start();
 			for($d=0;$d!=20;$d++){
 				echo $
 			}

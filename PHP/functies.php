@@ -27,13 +27,13 @@
 	function Feedback(){
 		if (isset ($_POST['Next']))
 		{	
-			$f = count($_SESSION['antwoord']) - 2;
-			$antwoord=$_SESSION['eerdere_antwoorden'][$f];
+			//$f = count($_SESSION['antwoord']) - 2;
+			//$antwoord=$_SESSION['eerdere_antwoorden'][$f];
 			$name=$_SESSION['naam'];
 			//$_SESSION['counter']=0;
 			//counter in oefeningen pleuren
 		
-			if($antwoord == $_SESSION['info'][3])
+			if($_SESSION['past'] == $_SESSION['info'][3])
 			{
 				echo "<br>" . "Goedzo " . $name . "!";
 				$_SESSION['counter']++;
