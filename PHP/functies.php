@@ -26,9 +26,9 @@
 	//begin functie voor feedback generator
 	function Feedback(){
 		if (isset ($_POST['Next']))
-		{		
-			$_SESSION['User_antwoord']=$_POST['User_antwoord'];
-			$antwoord=$_SESSION['User_antwoord'];
+		{	
+			$f = count($_SESSION['antwoord']) - 2;
+			$antwoord=$_SESSION['eerdere_antwoorden'][$f];
 			$name=$_SESSION['naam'];
 			//$_SESSION['counter']=0;
 			//counter in oefeningen pleuren

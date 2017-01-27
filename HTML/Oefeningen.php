@@ -20,10 +20,11 @@
 			$_SESSION['hoeveel'] = 1;
 		
 			if(isset($_POST['User_antwoord'])) {
-				$_SESSION['antwoord'][] = $_POST['User_antwoord'];
 				if(isset($_SESSION['antwoord'])){
-					$_SESSION['eerdere_antwoorden'][] = $_SESSION['antwoord'][]
+					$f = count($_SESSION['antwoord']) - 1;
+					$_SESSION['eerdere_antwoorden'][] = $_SESSION['antwoord'][$f];
 				}
+				$_SESSION['antwoord'][] = $_POST['User_antwoord'];
 				$vragen = count($_SESSION['antwoord']);
 				$progress_width = 900/20;
 				$progress = ($vragen)* $progress_width;
