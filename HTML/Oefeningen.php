@@ -30,6 +30,7 @@
 				$progress = ($vragen)* $progress_width;
 				$antwoord=$_POST['User_antwoord'];
 				$_SESSION['past'][] = $antwoord;
+				$_SESSION['eerdere_sommen'][] = $_SESSION['info'];
 				echo $vragen;
 				
 				if($_SESSION['type'] == 'toets'){
