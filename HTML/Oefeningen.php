@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 	<head>
 		<title>Rekenen</title>
@@ -22,7 +22,6 @@
 			if(isset($_POST['User_antwoord'])) {
 				if(isset($_SESSION['antwoord'])){
 					$f = count($_SESSION['antwoord']) - 1;
-					$_SESSION['eerdere_antwoorden'][] = $_SESSION['antwoord'][$f];
 				}
 				$_SESSION['antwoord'][] = $_POST['User_antwoord'];
 				$vragen = count($_SESSION['antwoord']);
@@ -53,7 +52,7 @@
 				$_SESSION['important'] = $_GET;
 			}
 			require('../PHP/Rekensommen.php');
-			include_once('../PHP/functies.php');
+			include_once('../PHP/feedback.php');
 			Feedback();
 			$_SESSION['counter']=0;
 			$_SESSION['fout']=0;

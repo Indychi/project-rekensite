@@ -24,7 +24,7 @@
 	}
 	//einde functie tweegetallen
 	//begin functie voor feedback generator
-	function Feedback(){
+	/*function Feedback(){
 		if (isset ($_POST['Next']))
 		{	
 			//$f = count($_SESSION['antwoord']) - 2;
@@ -42,7 +42,7 @@
 			/*elseif($_SESSION['fout']== 15)
 			{
 				echo "<br>" .$name . " ga maar naar de leraar voor meer uitleg over dit onderwerp.";
-			}*/
+			}*/ /*
 		
 			else
 			{
@@ -51,7 +51,7 @@
 				$_SESSION['past'] []++;
 			}
 		}
-	}	
+	}	*/
 	//einde functie voor feedback generator
 	//begin functie som
 	function som($d, $number1, $number2){
