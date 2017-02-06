@@ -7,64 +7,6 @@ body {
 	width: 100%;
 }
 /*end page*/
-/*dropdown buttons*/
-.dropbutton
-{
-	background-color: grey;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown
-{
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content
-{
-	background-color: #E1E1E1;
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a
-{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown:hover .dropdown-content
-{
-    display: inline-block;
-	z-index: 5;
-}
-/*end dropdown buttons*/
-/*progress bar*/
-#bar {
-	width: 0px;
-	max-width: 900px;
-	height: 30px;
-	position: absolute;
-	background: #4A4849;
-	z-index: 1;
-}
-
-#progress_container {
-	margin: 0px 510px 0px 510px;
-	position: relative;
-	width: 900px;
-	height: 30px;
-	background-color: #A3A2A0;
-}
-/*end progress bar*/
 /*inlogpagina*/
 img {
 	margin: 7% auto auto 36%;
@@ -97,3 +39,99 @@ img {
 	padding: 1%;
 }
 /*end inlogpagina*/
+/*dropdown buttons*/
+.dropbutton
+{
+	background-color: #58595D;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown
+{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content
+{
+	background-color: #E1E1E1;
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a:hover
+{
+	background-color: #FF0000;
+    
+}
+
+.dropdown-content a
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content
+{
+    display: inline-block;
+	z-index: 5;
+}
+/*end dropdown buttons*/
+/*progress bar*/
+#bar {
+	width: 0px;
+	max-width: 900px;
+	height: 30px;
+	position: fixed;
+	background: #4A4849;
+	z-index: 1;
+}
+
+#progress_container {
+	margin-left: 20px;
+	position: fixed;
+	width: 900px;
+	height: 30px;
+	background-color: #A3A2A0;
+}
+/*end progress bar*/
+/*work in progress underneath here*/
+/*sommen page holder*/
+#page {
+	margin: 0px 25% 0px 25%;
+}
+/*end sommen page holder*/
+/*som area*/
+#som_area {
+	background-color: red;
+	width: 100%;
+	height: 400px;
+	text-align: center;
+}
+
+#sommen {
+	background-color: green;
+	margin: 5% 5% 0px 0px;
+	position: fixed;
+	
+}
+/*end som area*/
+/*answer area*/
+#Input_vak {
+	background-color: blue;
+}
+/*end answer area*/
+/*feedback_area*/
+#feedback_area {
+	position: fixed;
+	margin-left: 1500px;
+}
+/*feedback_area*/

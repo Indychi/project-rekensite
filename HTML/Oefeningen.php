@@ -39,12 +39,12 @@
 				if($_SESSION['type'] == 'toets'){
 					if($vragen == 20) 
 					{
-						header("refresh:5;url= Resultaten.php");
+						header("Location: Resultaten.php");
 					}
 				}
 				else{
 					if($vragen == 20){
-						header("refresh:5;url= HTML.php");
+						header("Location: Home.php");
 					}
 				}
 			}
@@ -73,25 +73,27 @@
 	</head>
 	<body>
 		<div id="container">
-			<div id="som_area">
-				<div id="sommen">
-					<p>
-						<?php echo $_SESSION['info'][0] . $_SESSION['info'][2] . $_SESSION['info'][1]; ?>
-					</p>
+			<div id="page">
+				<div id="som_area">
+					<div id="sommen">
+						<p>
+							<?php echo $_SESSION['info'][0] . $_SESSION['info'][2] . $_SESSION['info'][1]; ?>
+						</p>
+					</div>
+				</div>
+				<div id="progress_container">
+					<div id="bar"></div>
+				</div>
+				<div id="Input_vak">
+					<form action="?" method="POST" id="antwoord" >
+						<input type="number" name="User_antwoord" id="User_antwoord" placeholder="antwoord" required ></input>
+					</form>
+					<button type="submit" form="antwoord" name="Next" value="Next" >Next</button>
 				</div>
 			</div>
-			<div id="progress_container">
-				<div id="bar" ></div>
+			<div id="feedback_area">
+				<?php echo "<pre>"; print_r($_SESSION) ?>
 			</div>
-			<div id="Input_vak">
-				<form action="?" method="POST" id="antwoord" >
-					<input type="text" name="User_antwoord" pattern="\d*" placeholder="antwoord" required ></input>
-				</form>
-				<button type="submit" form="antwoord" name="Next" value="Next" >Next</button>
-			</div>
-		</div>
-		<div id="feedback_area">
-			<?php echo "<pre>"; print_r($_SESSION) ?>
 		</div>
 	</body>
 </html>

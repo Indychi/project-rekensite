@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div id="container" >
-			<form action="HTML.php" method="POST" id="inlogpagina" >
+			<form action="Homepage.php" method="POST" id="inlogpagina" >
 				<input type="text" placeholder="naam" name="naam" id="naam" required></input>
 				<input type="submit" name="verzend" value="volgende" id="versturen"></input>
 			</form>
