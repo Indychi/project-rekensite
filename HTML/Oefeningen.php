@@ -28,10 +28,8 @@
 				$progress = ($vragen)* $progress_width;
 				$antwoord=$_POST['User_antwoord'];
 				$_SESSION['past'][] = $antwoord;
-				$_SESSION['oud_antwoord']=$_SESSION['info'][3];
-				$_SESSION['eerdere_sommen'][] = $_SESSION['info'];
-				$_SESSION['counter']=0;
-				$_SESSION['fout']=0;
+				$_SESSION['oud_antwoord'][]=$_SESSION['info'][3];
+				$_SESSION['sommen'][] = $_SESSION['info'][0] . $_SESSION['info'][2] . $_SESSION['info'][1] . "=" . $_SESSION['info'][3];
 
 				echo $vragen;
 				
@@ -53,15 +51,6 @@
 			require('../PHP/Rekensommen.php');
 			include_once('../PHP/feedback.php');
 			Feedback();
-			$_SESSION['counter']=0;
-			$_SESSION['fout']=0;
-			$Opdr_Totaal= $_SESSION['counter'] + $_SESSION['fout'];
-			
-			if($Opdr_Totaal/*$_SESSION['counter']*/  >= 20) 
-			{
-				unset($_SESSION['counter']);
-				unset($_SESSION['fout']);
-			}
 			//session_destroy();
 		?>
 	<script>
