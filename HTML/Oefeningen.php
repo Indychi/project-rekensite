@@ -17,7 +17,6 @@
 			if(isset($_GET['type'])) {
 				$_SESSION['type'] = $_GET['type'];
 			}
-			$_SESSION['hoeveel'] = 1;
 		
 			if(isset($_POST['User_antwoord'])) {
 				if(isset($_SESSION['antwoord'])){
