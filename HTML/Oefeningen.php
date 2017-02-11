@@ -24,14 +24,14 @@
 				}
 				$_SESSION['antwoord'][] = $_POST['User_antwoord'];
 				$vragen = count($_SESSION['antwoord']);
-				$progress_width = 900/20;
+				$progress_width = 951.5/20;
 				$progress = ($vragen)* $progress_width;
 				$antwoord=$_POST['User_antwoord'];
 				$_SESSION['past'][] = $antwoord;
 				$_SESSION['oud_antwoord'][]=$_SESSION['info'][3];
 				$_SESSION['sommen'][] = $_SESSION['info'][0] . $_SESSION['info'][2] . $_SESSION['info'][1] . "=" . $_SESSION['info'][3];
 
-				echo $vragen;
+				//echo $vragen;
 				
 				if($_SESSION['type'] == 'toets'){
 					if($vragen == 20) 
@@ -41,12 +41,9 @@
 				}
 				else{
 					if($vragen == 20){
-						header("Location: Home.php");
+						header("refresh:5;url=Homepage.php");
 					}
 				}
-			}
-			else {
-				$_SESSION['important'] = $_GET;
 			}
 			require('../PHP/Rekensommen.php');
 			include_once('../PHP/feedback.php');
@@ -63,11 +60,9 @@
 		<div id="container">
 			<div id="page">
 				<div id="som_area">
-					<div id="sommen">
-						<p>
-							<?php echo $_SESSION['info'][0] . $_SESSION['info'][2] . $_SESSION['info'][1]; ?>
-						</p>
-					</div>
+					<p id="sommen">
+						<?php echo $_SESSION['info'][0] . $_SESSION['info'][2] . $_SESSION['info'][1]; ?>
+					</p>
 				</div>
 				<div id="progress_container">
 					<div id="bar"></div>
@@ -80,7 +75,7 @@
 				</div>
 			</div>
 			<div id="feedback_area">
-				<?php echo "<pre>"; print_r($_SESSION) ?>
+				<?php //echo "<pre>"; print_r($_POST); ?>
 			</div>
 		</div>
 	</body>
