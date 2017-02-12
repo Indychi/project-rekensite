@@ -1,17 +1,19 @@
 <?php
-	function Feedback(){		
-			if (isset ($_POST['Next']))#$_SESSION['antwoord'])) //<--fout bekijk notitie
+	function Feedback(){
+		if($_SESSION['type'] != 'toets')
+		{							
+			if (isset ($_POST['Next']))
 			{	
 				$_SESSION['punten']=10;
-				//$oude_vraag=;
+				$vragen = count($_SESSION['antwoord']) -1;
 				$name=$_SESSION['naam'];
-				//$_SESSION['past'] []=$_SESSION['past']++;
-				//counter in oefeningen pleuren
-		
-				if($_SESSION['antwoord'] == $_SESSION['eerdere_sommen'][$oude_vraag][3])//$_SESSION['antwoord'] == $_SESSION['oud_antwoord'])
+				$a = $_SESSION['past'][$vragen];
+				$b = $_SESSION['oud_antwoord'][$vragen];
+				
+				if($b == $a)
 				{
 					echo "<br>" . "Goedzo " . $name . "!";
-					$_SESSION['counter']++;
+					
 				}
 		
 				/*elseif($_SESSION['fout']== 15)
@@ -21,11 +23,37 @@
 		
 				else
 				{
-					echo "<br>" . "Jammer " . $name ." het juiste antwoord is " . $_SESSION['info'][3];
-					$_SESSION['fout']++;
-					$_SESSION['punten']-0.5;
-					//$_SESSION['past'] []++;
+					echo "<br>" . "Jammer " . $name ." het juiste antwoord was " . $b;
+					if (isset($_SESSION['fout']))
+					{
+						$_SESSION['fout']+=1;
+					}
+					else
+					{
+						$_SESSION['fout']=1;
+					}
 				}
 			}
+		}
+		else
+		{				
+				$vragen = count($_SESSION['antwoord']) -1;
+				$name=$_SESSION['naam'];
+				$a = $_SESSION['past'][$vragen];
+				$b = $_SESSION['oud_antwoord'][$vragen];
+
+			if($b != $a)
+			{
+					if (isset($_SESSION['fout']))
+					{
+						$_SESSION['fout']+=1;
+					}
+					
+					else
+					{
+						$_SESSION['fout']=1;
+					}
+			}
+		}
 	}
 ?>
