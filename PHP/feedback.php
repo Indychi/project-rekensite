@@ -3,7 +3,7 @@
 			if (isset ($_POST['Next']))#$_SESSION['antwoord'])) //<--fout bekijk notitie
 			{	
 				$_SESSION['punten']=10;
-				$oude_vraag=;
+				//$oude_vraag=;
 				$name=$_SESSION['naam'];
 				//$_SESSION['past'] []=$_SESSION['past']++;
 				//counter in oefeningen pleuren
@@ -28,4 +28,4 @@
 				}
 			}
 	}
-?>	
+?>
