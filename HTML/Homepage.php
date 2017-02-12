@@ -7,6 +7,22 @@
 		<link rel="icon" href="../Image/plus.png">
 		<?php
 			session_start();
+			if(isset($_SESSION['antwoord'])){
+				if (count($_SESSION['antwoord']) > 0)
+				{
+					unset($_SESSION['antwoord']);
+					unset($_SESSION['past']);
+					unset($_SESSION['oud_antwoord']);
+					unset($_SESSION['sommen']);
+					unset($_SESSION['info']);
+					unset($_SESSION['oud_info']);
+					unset($_SESSION['operator']);
+					unset($_SESSION['niveau']);
+					unset($_SESSION['type']);
+					unset($_SESSION['punten']);
+					unset($_SESSION['fout']);
+				}
+			}
 			if (isset ($_POST['verzend']))
 			{
 				$_SESSION['naam']=$_POST['naam'];
