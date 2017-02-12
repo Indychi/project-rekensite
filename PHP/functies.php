@@ -28,9 +28,8 @@
 		if($_SESSION['type'] == "sommen") {
 			if(isset($_SESSION['antwoord'])) {
 				$welk = count($_SESSION['antwoord']) - 1;
-				$test = count($_SESSION['antwoord']) - 2;
 				$naam = $_SESSION['naam'];
-				$a = $_SESSION['oud_info'][$test][3];
+				$a = $_SESSION['oud_info'][$welk][3];
 				if($_SESSION['antwoord'][$welk] == $a) {
 					$feedback = "Goed zo " . $naam;
 				}

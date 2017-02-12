@@ -18,28 +18,22 @@
 				$_SESSION['type'] = $_GET['type'];
 			}
 			require('../PHP/Rekensommen.php');
+			$_SESSION['oud_info'][] = $_SESSION['info'];
+			$_SESSION['oud_antwoord'][] = $_SESSION['info'][3];
+			$_SESSION['sommen'][] = $_SESSION['info'][0] . $_SESSION['info'][2] . $_SESSION['info'][1] . "=" . $_SESSION['info'][3];
+			$vragen = count($_SESSION['antwoord']);
+			$progress_width = 951.5/20;
+			$progress = ($vragen)* $progress_width;
 			if(isset($_POST['User_antwoord'])) {
 				if(isset($_SESSION['antwoord'])){
 					$f = count($_SESSION['antwoord']) - 1;
 				}
-				$_SESSION['oud_info'][] = $_SESSION['info'];
 				$_SESSION['antwoord'][] = $_POST['User_antwoord'];
-				$_SESSION['oud_antwoord'][] = $_SESSION['info'][3];
-				$_SESSION['sommen'][] = $_SESSION['info'][0] . $_SESSION['info'][2] . $_SESSION['info'][1] . "=" . $_SESSION['info'][3];
-				$vragen = count($_SESSION['antwoord']);
-				$progress_width = 951.5/20;
-				$progress = ($vragen)* $progress_width;
+				
 				//echo $vragen;
-				if($_SESSION['type'] == 'toets'){
-					if($vragen >= 20) 
-					{
-						header("refresh:5;url=Homepage.php");
-					}
-				}
-				else{
-					if($vragen >= 20){
-						header("refresh:5;url=Homepage.php");
-					}
+				if($vragen >= 20) 
+				{
+					header("refresh:5;url=Resultaten.php");
 				}
 				$feedback = feedback();
 				echo $feedback;
