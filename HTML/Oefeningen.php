@@ -21,13 +21,14 @@
 			$_SESSION['oud_info'][] = $_SESSION['info'];
 			$_SESSION['oud_antwoord'][] = $_SESSION['info'][3];
 			$_SESSION['sommen'][] = $_SESSION['info'][0] . $_SESSION['info'][2] . $_SESSION['info'][1] . "=" . $_SESSION['info'][3];
+			$feedback = Feedback();
 			if(isset($_POST['User_antwoord'])) {
 				if(isset($_SESSION['antwoord'])){
 					$f = count($_SESSION['antwoord']) - 1;
 				}
 				$_SESSION['antwoord'][] = $_POST['User_antwoord'];
 				$vragen = count($_SESSION['antwoord']);
-				$progress_width = 951.5/20;
+				$progress_width = 100/20;
 				$progress = ($vragen)* $progress_width;
 				
 				//echo $vragen;
@@ -38,9 +39,12 @@
 			}
 			//session_destroy();
 		?>
+	<style>
+		
+	</style>
 	<script>
 		$(document).ready(function(){
-			$("#bar").animate({width: '<?php echo $progress ?>px'});
+			$("#bar").animate({width: '<?php echo $progress ?>%'});
 		});
 	</script>
 	</head>
@@ -63,9 +67,10 @@
 				</div>
 			</div>
 			<div id="feedback_area">
+
 				<?php 
 					//Feedback hier laten staan want dan kun je de feedback ergens anders neer zetten
-					Feedback(); 
+					echo $feedback; 
 				?>
 			</div>
 		</div>

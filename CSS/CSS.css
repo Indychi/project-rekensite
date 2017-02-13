@@ -55,7 +55,7 @@ img {
 .dropdown
 {
     position: relative;
-    display: inline-block;
+    display: block;
 }
 
 .dropdown-content
@@ -83,14 +83,14 @@ img {
 
 .dropdown:hover .dropdown-content
 {
-    display: inline-block;
+    display: block;
 	z-index: 5;
 }
 /*end dropdown buttons*/
 /*progress bar*/
 #bar {
 	width: 0px;
-	max-width: 951.5px;
+	max-width: 100%;
 	height: 100%;
 	position: absolute;
 	background-color: /*#4A4849*/ #F50504;
@@ -148,7 +148,9 @@ img {
 /*end answer area*/
 /*feedback_area*/
 #feedback_area {
-	position: fixed;
+	height: 10px;
+	float: right;
 	margin-top: -30%;
+	position: fixed;
 }
 /*feedback_area*/
