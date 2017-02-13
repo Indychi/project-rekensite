@@ -5,6 +5,11 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../CSS/CSS.css">
 		<link rel="icon" href="../image/plus.png">
+		<?php 
+			if(isset($_SESSION)){
+				session_destroy();
+			}
+		?>
 	</head>
 	<body>
 		<div id="container" >

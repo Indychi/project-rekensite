@@ -24,34 +24,22 @@
 	}
 	//einde functie tweegetallen
 	//begin functie voor feedback generator
-	/*function Feedback(){
-		if (isset ($_POST['Next']))
-		{	
-			//$f = count($_SESSION['antwoord']) - 2;
-			//$antwoord=$_SESSION['eerdere_antwoorden'][$f];
-			$name=$_SESSION['naam'];
-			//$_SESSION['past'] []=$_SESSION['past']++;
-			//counter in oefeningen pleuren
-		
-			if($_SESSION['past'] == $_SESSION['oud_antwoord'])
-			{
-				echo "<br>" . "Goedzo " . $name . "!";
-				$_SESSION['counter']++;
-			}
-		
-			/*elseif($_SESSION['fout']== 15)
-			{
-				echo "<br>" .$name . " ga maar naar de leraar voor meer uitleg over dit onderwerp.";
-			}*/ /*
-		
-			else
-			{
-				echo "<br>" . "Jammer " . $name ." het juiste antwoord is " . $_SESSION['info'][3];
-				$_SESSION['fout']++;
-				$_SESSION['past'] []++;
+	function feedback() {
+		if($_SESSION['type'] == "sommen") {
+			if(isset($_SESSION['antwoord'])) {
+				$welk = count($_SESSION['antwoord']) - 1;
+				$naam = $_SESSION['naam'];
+				$a = $_SESSION['oud_info'][$welk][3];
+				if($_SESSION['antwoord'][$welk] == $a) {
+					$feedback = "Goed zo " . $naam;
+				}
+				else {
+					$feedback = "Jammer " . $naam . " het juiste antwoord is " . $a;
+				}
+				return $feedback;
 			}
 		}
-	}	*/
+	}
 	//einde functie voor feedback generator
 	//begin functie som
 	function som($d, $number1, $number2){
