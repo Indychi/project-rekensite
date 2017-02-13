@@ -18,6 +18,7 @@
 				$_SESSION['type'] = $_GET['type'];
 			}
 			require('../PHP/Rekensommen.php');
+			$feedback = feedback();
 			$_SESSION['oud_info'][] = $_SESSION['info'];
 			$_SESSION['oud_antwoord'][] = $_SESSION['info'][3];
 			$_SESSION['sommen'][] = $_SESSION['info'][0] . $_SESSION['info'][2] . $_SESSION['info'][1] . "=" . $_SESSION['info'][3];
@@ -27,7 +28,7 @@
 				}
 				$_SESSION['antwoord'][] = $_POST['User_antwoord'];
 				$vragen = count($_SESSION['antwoord']);
-				$progress_width = 951.5/20;
+				$progress_width = 100/20;
 				$progress = ($vragen)* $progress_width;
 				
 				//echo $vragen;
@@ -35,14 +36,15 @@
 				{
 					header("refresh:5;url=Resultaten.php");
 				}
-				$feedback = feedback();
-				echo $feedback;
 			}
 			//session_destroy();
 		?>
+	<style>
+		
+	</style>
 	<script>
 		$(document).ready(function(){
-			$("#bar").animate({width: '<?php echo $progress ?>px'});
+			$("#bar").animate({width: '<?php echo $progress ?>%'});
 		});
 	</script>
 	</head>
@@ -65,7 +67,7 @@
 				</div>
 			</div>
 			<div id="feedback_area">
-
+				<?php echo $feedback; ?>
 			</div>
 		</div>
 	</body>
