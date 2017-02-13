@@ -39,9 +39,6 @@
 			}
 			//session_destroy();
 		?>
-	<style>
-		
-	</style>
 	<script>
 		$(document).ready(function(){
 			$("#bar").animate({width: '<?php echo $progress ?>%'});
@@ -67,7 +64,6 @@
 				</div>
 			</div>
 			<div id="feedback_area">
-
 				<?php 
 					//Feedback hier laten staan want dan kun je de feedback ergens anders neer zetten
 					echo $feedback; 
