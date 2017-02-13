@@ -25,18 +25,36 @@
 	//einde functie tweegetallen
 	//begin functie voor feedback generator
 	function feedback() {
-		if($_SESSION['type'] == "sommen") {
-			if(isset($_SESSION['antwoord'])) {
-				$welk = count($_SESSION['antwoord']) - 1;
-				$naam = $_SESSION['naam'];
-				$a = $_SESSION['oud_info'][$welk][3];
-				if($_SESSION['antwoord'][$welk] == $a) {
+		if(isset ($_SESSION['antwoord']))
+		{	
+			$welk = count($_SESSION['antwoord']) - 1;
+			$naam = $_SESSION['naam'];
+			$a = $_SESSION['oud_info'][$welk][3];
+			$b = $_SESSION['antwoord'][$welk];
+			if($_SESSION['type'] == "sommen") 
+			{
+
+				if($b == $a) {
 					$feedback = "Goed zo " . $naam;
 				}
 				else {
 					$feedback = "Jammer " . $naam . " het juiste antwoord is " . $a;
-				}
+				}				
 				return $feedback;
+			}
+			else
+			{
+				if($b != $a)
+				{
+						if (isset($_SESSION['fout']))
+						{
+							$_SESSION['fout']++;
+						}				
+						else
+						{
+							$_SESSION['fout']=1;
+						}
+				}	
 			}
 		}
 	}

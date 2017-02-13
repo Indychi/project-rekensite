@@ -35,11 +35,7 @@
 				{
 					header("refresh:5;url=Resultaten.php");
 				}
-				$feedback = feedback();
-				echo $feedback;
 			}
-			require('../PHP/Rekensommen.php');
-			include_once('../PHP/feedback.php');
 			//session_destroy();
 		?>
 	<script>
@@ -68,15 +64,9 @@
 			</div>
 			<div id="feedback_area">
 				<?php 
-					//dat wil zeggen tot en met deze comment voor duidelijkheid zie volgende comment
-					echo "<pre>";
-					print_r($_POST);
-					echo "<br>";
-					print_r($_SESSION);
-					echo "</pre>"; 
-					//als de site werkt verwijder alles hierboven
 					//Feedback hier laten staan want dan kun je de feedback ergens anders neer zetten
-					Feedback(); ?>
+					Feedback(); 
+				?>
 			</div>
 		</div>
 	</body>
