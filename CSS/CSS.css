@@ -148,9 +148,10 @@ img {
 /*end answer area*/
 /*feedback_area*/
 #feedback_area {
-	height: 10px;
-	float: right;
-	margin-top: -30%;
+	height: 25px;
+	float: left;
+	margin-left: 80%;
+	margin-bottom: 12%;
 	position: fixed;
 }
 /*feedback_area*/

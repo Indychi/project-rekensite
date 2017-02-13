@@ -18,7 +18,6 @@
 				$_SESSION['type'] = $_GET['type'];
 			}
 			require('../PHP/Rekensommen.php');
-			$feedback = feedback();
 			$_SESSION['oud_info'][] = $_SESSION['info'];
 			$_SESSION['oud_antwoord'][] = $_SESSION['info'][3];
 			$_SESSION['sommen'][] = $_SESSION['info'][0] . $_SESSION['info'][2] . $_SESSION['info'][1] . "=" . $_SESSION['info'][3];
@@ -39,9 +38,6 @@
 			}
 			//session_destroy();
 		?>
-	<style>
-		
-	</style>
 	<script>
 		$(document).ready(function(){
 			$("#bar").animate({width: '<?php echo $progress ?>%'});
@@ -67,7 +63,7 @@
 				</div>
 			</div>
 			<div id="feedback_area">
-				<?php echo $feedback; ?>
+				<?php feedback() ?>
 			</div>
 		</div>
 	</body>
