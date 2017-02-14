@@ -31,7 +31,7 @@
 				$progress_width = 100/20;
 				$progress = ($vragen)* $progress_width;
 				
-				//echo $vragen;
+				echo $vragen;
 				if($vragen >= 20) 
 				{
 					header("refresh:5;url=Resultaten.php");

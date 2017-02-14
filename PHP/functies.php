@@ -33,27 +33,21 @@
 			$b = $_SESSION['antwoord'][$welk];
 			if($_SESSION['type'] == "sommen") 
 			{
-
 				if($b == $a) {
 					$feedback = "Goed zo " . $naam;
 				}
-				else {
+				else 
+				{
 					$feedback = "Jammer " . $naam . " het juiste antwoord is " . $a;
 				}				
 				return $feedback;
 			}
 			else
 			{
+				$_SESSION['fout'] = 0;
 				if($b != $a)
 				{
-						if (isset($_SESSION['fout']))
-						{
-							$_SESSION['fout']++;
-						}				
-						else
-						{
-							$_SESSION['fout']=1;
-						}
+					$_SESSION['fout']++;			
 				}	
 			}
 		}
