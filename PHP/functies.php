@@ -27,10 +27,11 @@
 	function feedback() {
 		if(isset ($_SESSION['antwoord']))
 		{	
-			$welk = count($_SESSION['antwoord']) - 1;
+			$welk = count($_SESSION['antwoord']);
 			$naam = $_SESSION['naam'];
 			$a = $_SESSION['oud_info'][$welk][3];
 			$b = $_SESSION['antwoord'][$welk];
+			$_SESSION['fout'] = 0;
 			if($_SESSION['type'] == "sommen") 
 			{
 				if($b == $a) {
@@ -38,13 +39,18 @@
 				}
 				else 
 				{
-					$feedback = "Jammer " . $naam . " het juiste antwoord is " . $a;
+					//$_SESSION['fout'] = 0;
+					if($b != $a)
+					{
+						$feedback = "Jammer " . $naam . " het juiste antwoord is " . $a;
+						$_SESSION['fout']++;
+					}
 				}				
 				return $feedback;
 			}
 			else
 			{
-				$_SESSION['fout'] = 0;
+				//$_SESSION['fout'] = 0;
 				if($b != $a)
 				{
 					$_SESSION['fout']++;			
