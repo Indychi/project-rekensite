@@ -27,7 +27,7 @@
 				foreach($_SESSION['sommen'] as $sommen )
 				{
 					print $sommen;
-					echo "<br>" . "jouw antwoord " . $_SESSION['antwoord'][$i] . "<br>";
+					echo "<br>jouw antwoord " . $_SESSION['antwoord'][$i] . "<br>";
 					$i++;
 				}
 			?>

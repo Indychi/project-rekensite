@@ -27,7 +27,7 @@
 	function feedback() {
 		if(isset ($_SESSION['antwoord']))
 		{	
-			$welk = count($_SESSION['antwoord']);
+			$welk = count($_SESSION['antwoord']) -1;
 			$naam = $_SESSION['naam'];
 			$a = $_SESSION['oud_info'][$welk][3];
 			$b = $_SESSION['antwoord'][$welk];
