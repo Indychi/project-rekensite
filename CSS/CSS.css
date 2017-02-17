@@ -5,10 +5,12 @@ body {
 	position: fixed;
 	height: 100%;
 	width: 100%;
+	font-family: "Courier New";
 }
 #container {
 	height: 100%;
 	width: 100%;
+	text-align: center;
 }
 /*end page*/
 /*inlogpagina*/
@@ -152,22 +154,38 @@ img {
 /*end answer area*/
 /*feedback_area*/
 #feedback_area {
-	color: white;
+	color: black;
+	width: 100%;
+	max-width: 400px;
 	height: 25px;
 	float: left;
-	margin-left: 75%;
-	margin-top: -15%;
+	margin: -17% 3% 1% 73%;
 	position: fixed;
+	opacity: 0.7;
 }
 
 #feedback_container {
-	width: 70%;
-	height: 130px;
+	width: 100%;
+	height: auto;
+	max-width: 500px;
+	padding: 8px;
 	background-color: #FFFFFF;
-	font-size: 90px;
-	text-family: bubblegum-sans;
+	font-size: 60px;
+	font-family: "Times New Roman", Times, serif;
 	text-align: center;
 	border: solid #660000 5px;
 	border-radius: 25px;
+}
+
+#groot_veld{
+	width: 50%;
+	heigth: 100%;
+	margin-left: 25%;
+	font-size: 14px;
+	text-family: bubblegum-sans;
+	background-color: grey;
+	border: solid #660000 5px;
+	border-radius: 25px;
+	opacity: 0.75;
 }
 /*feedback_area*/

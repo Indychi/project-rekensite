@@ -9,24 +9,30 @@
 	</head>
 	<body>
 		<div id="container" >
+			<div id="groot_veld">
 			<?php
+				$name= $_SESSION['naam'];
 				$score= 10 -($_SESSION['fout'] * 0.5);
 				if ($score != 0)
 				{
-					echo $_SESSION['naam'] . " jouw score is " . $score;
+					echo $name . " jouw score is " . $score . "<br>" . "<br>";
 				}
 				else
 				{
 					$score= 1;
-					echo $_SESSION['naam'] . " jouw score is " . $score;
+					echo $name . " jouw score is " . $score . "<br>" . "<br>";
 				}
-				for($d=0;$d!=20;$d++){
-					echo $_SESSION['sommen'] . "<br>";
-					$_SESSION['sommen']++;
-					echo "jouw antwoord" . $_SESSION['oud_antwoord'] . "<br>";
-					$_SESSION['oud_antwoord']++;
+				// $i hoort bij de foreach hieronder
+				$i = 0;
+				
+				foreach($_SESSION['sommen'] as $sommen )
+				{
+					print $sommen;
+					echo "<br>" . "jouw antwoord " . $_SESSION['antwoord'][$i] . "<br>";
+					$i++;
 				}
 			?>
+			</div>
 			<a href="Home.php">Afsluiten</a>
 			<a href="Homepage.php">Opnieuw</a>
 		</div>
