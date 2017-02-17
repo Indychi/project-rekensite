@@ -23,10 +23,12 @@
 				for($d=0;$d!=20;$d++){
 					echo $_SESSION['sommen'] . "<br>";
 					$_SESSION['sommen']++;
-					echo "jouw antwoord" . $_SESSION]['oud_antwoord'] . "<br>";
+					echo "jouw antwoord" . $_SESSION['oud_antwoord'] . "<br>";
 					$_SESSION['oud_antwoord']++;
 				}
 			?>
+			<a href="Home.php">Afsluiten</a>
+			<a href="Homepage.php">Opnieuw</a>
 		</div>
 	</body>
 </html>
