@@ -39,12 +39,7 @@
 				}
 				else 
 				{
-					//$_SESSION['fout'] = 0;
-					if($b != $a)
-					{
-						$feedback = "Jammer " . $naam . " het juiste antwoord is " . $a;
-						$_SESSION['fout']++;
-					}
+					$feedback = "Jammer " . $naam . " het juiste antwoord was " . $a;
 				}				
 				return $feedback;
 			}

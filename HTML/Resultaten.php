@@ -9,6 +9,7 @@
 	</head>
 	<body>
 		<div id="container" >
+			<div id="groot_veld">
 			<?php
 				$name= $_SESSION['naam'];
 				$score= 10 -($_SESSION['fout'] * 0.5);
@@ -31,6 +32,9 @@
 					$i++;
 				}
 			?>
+			</div>
+			<a href="Home.php">Afsluiten</a>
+			<a href="Homepage.php">Opnieuw</a>
 		</div>
 	</body>
 </html>

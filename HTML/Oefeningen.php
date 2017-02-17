@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../CSS/CSS.css">
 		<link rel="icon" href="../image/plus.png">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.fullbg.min.js"></script>
 		<?php 
 			session_start();
 			if(isset($_GET['operator'])) {
@@ -32,17 +33,19 @@
 				$progress = ($vragen)* $progress_width;
 				
 				echo $vragen;
-				if($vragen == 20) 
+				if($vragen >= 20) 
 				{
 					header("refresh:5;url=Resultaten.php");
 				}
 			}
+			$feedback = feedback();
 			//session_destroy();
 		?>
 	<script>
 		$(document).ready(function(){
 			$("#bar").animate({width: '<?php echo $progress ?>%'});
 		});
+		
 	</script>
 	</head>
 	<body>
@@ -56,19 +59,44 @@
 				<div id="progress_container">
 					<div id="bar"></div>
 				</div>
-				<div id="Input_vak">
-					<form action="?" method="POST" id="antwoord" >
-						<input type="number" name="User_antwoord" id="User_antwoord" placeholder="antwoord" required ></input>
-					</form>
-					<button type="submit" form="antwoord" name="Next" value="Next" >Next</button>
-				</div>
-			</div>
-			<div id="feedback_area">
-				<?php 
-					//Feedback hier laten staan want dan kun je de feedback ergens anders neer zetten
-					echo $feedback; 
+				<?php
+					if(isset($vragen)) {
+						if($vragen < 20) {
+				?>
+							<div id="Input_vak">
+							<form action="?" method="POST" id="antwoord" >
+								<input type="number" name="User_antwoord" id="User_antwoord" placeholder="antwoord" required ></input>
+							</form>
+							<button type="submit" form="antwoord" name="Next" value="Next" >Next</button>
+							</div>
+				<?php
+						}
+						else{
+						}
+					}
+					else {
+				?>
+						<div id="Input_vak">
+						<form action="?" method="POST" id="antwoord" >
+							<input type="number" name="User_antwoord" id="User_antwoord" placeholder="antwoord" required ></input>
+						</form>
+						<button type="submit" form="antwoord" name="Next" value="Next" >Next</button>
+						</div>
+				<?php
+					}
 				?>
 			</div>
+			<?php
+				if(isset($vragen)) {
+			?>
+					<div id="feedback_area">
+						<div id="feedback_container">
+							<?php echo $feedback;	?>
+						</div>
+					</div>
+			<?php
+				}
+			?>
 		</div>
 	</body>
 </html>

@@ -1,23 +1,27 @@
 /*page*/
-html, body {
-	width: 99%;
-	height: 98%;
-	background-color: grey;
+body {
+	background: url("../image/background.jpg");
+    background-repeat: no-repeat;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	font-family: "Courier New";
 }
 #container {
 	height: 100%;
 	width: 100%;
+	text-align: center;
 }
 /*end page*/
 /*inlogpagina*/
+#convenience {
+	margin: 18% auto auto 45%;
+}
+
 img {
 	margin: 7% auto auto 36%;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
 	border: 1px #2D2D2D solid;
-}
-
-#inlogpagina {
-	margin: 18% auto auto 45%;
 }
 
 #versturen {
@@ -44,7 +48,7 @@ img {
 /*dropdown buttons*/
 .dropbutton
 {
-	background-color: #58595D;
+	background-color: #868686;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -70,7 +74,8 @@ img {
 
 .dropdown-content a:hover
 {
-	background-color: #FF0000;
+	background-color: #660000;
+	color: white;
     
 }
 
@@ -84,18 +89,18 @@ img {
 
 .dropdown:hover .dropdown-content
 {
-    display: block;
+    display: inline-block;
 	z-index: 5;
 }
 /*end dropdown buttons*/
 /*progress bar*/
 #bar {
 	width: 0px;
-	max-width: 100%;
+	max-width: 100.1%;
 	height: 100%;
 	position: absolute;
-	background-color: /*#4A4849*/ #F50504;
-	border-radius: 10px;
+	background-color: /*#4A4849*/ #660000;
+	border-radius: 6px;
 	z-index: 1;
 }
 
@@ -105,6 +110,7 @@ img {
 	width: 100%;
 	height: 60px;
 	background-color: #A3A2A0;
+	border: solid black 3px;
 	border-radius: 10px;
 }
 /*end progress bar*/
@@ -143,16 +149,44 @@ img {
 	font-size: 90px;
 	text-family: bubblegum-sans;
 	text-align: center;
-	border: red 5px solid;
+	border: solid #660000 5px;
 	border-radius: 25px;
 }
 /*end answer area*/
 /*feedback_area*/
 #feedback_area {
+	color: black;
+	width: 100%;
+	max-width: 400px;
 	height: 25px;
 	float: left;
-	margin-left: 80%;
-	margin-bottom: 12%;
+	margin: -17% 3% 1% 73%;
 	position: fixed;
+	opacity: 0.7;
+}
+
+#feedback_container {
+	width: 100%;
+	height: auto;
+	max-width: 500px;
+	padding: 8px;
+	background-color: #FFFFFF;
+	font-size: 60px;
+	font-family: "Times New Roman", Times, serif;
+	text-align: center;
+	border: solid #660000 5px;
+	border-radius: 25px;
+}
+
+#groot_veld{
+	width: 50%;
+	heigth: 100%;
+	margin-left: 25%;
+	font-size: 14px;
+	text-family: bubblegum-sans;
+	background-color: grey;
+	border: solid #660000 5px;
+	border-radius: 25px;
+	opacity: 0.75;
 }
 /*feedback_area*/
