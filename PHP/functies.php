@@ -25,13 +25,14 @@
 	//einde functie tweegetallen
 	//begin functie voor feedback generator
 	function feedback() {
+		$_SESSION['fout'] = 0;
 		if(isset ($_SESSION['antwoord']))
 		{	
 			$welk = count($_SESSION['antwoord']) -1;
 			$naam = $_SESSION['naam'];
-			$a = $_SESSION['oud_info'][$welk][3];
+			$a = $_SESSION['oud_antwoord'];//$_SESSION['oud_info'][$welk][3];
 			$b = $_SESSION['antwoord'][$welk];
-			$_SESSION['fout'] = 0;
+			
 			if($_SESSION['type'] == "sommen") 
 			{
 				if($b == $a) {
@@ -40,12 +41,12 @@
 				else 
 				{
 					$feedback = "Jammer " . $naam . " het juiste antwoord was " . $a;
+					$_SESSION['fout']++;
 				}				
 				return $feedback;
 			}
 			else
 			{
-				//$_SESSION['fout'] = 0;
 				if($b != $a)
 				{
 					$_SESSION['fout']++;			

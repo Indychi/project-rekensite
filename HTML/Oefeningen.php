@@ -61,7 +61,7 @@
 				</div>
 				<?php
 					if(isset($vragen)) {
-						if($vragen < 20) {
+						if($vragen < 21) {
 				?>
 							<div id="Input_vak">
 							<form action="?" method="POST" id="antwoord" >
